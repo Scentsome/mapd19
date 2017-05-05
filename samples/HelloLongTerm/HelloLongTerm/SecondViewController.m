@@ -7,7 +7,7 @@
 //
 
 #import "SecondViewController.h"
-
+#import "BlueViewController.h"
 @interface SecondViewController ()
 @property (weak, nonatomic) IBOutlet UIView *contentView;
 
@@ -74,6 +74,16 @@
 //    NSLog(@"============");
 //    NSLog(@"Touch Began in view controller");
 //}
-
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+    NSLog(@"segue %@",segue.identifier);
+    
+    if([segue.identifier isEqualToString:@"Second2Blue"]){
+        BlueViewController * blueVC =  segue.destinationViewController;
+        
+//        blueVC.blueLabel.text = @"Hello";
+        blueVC.dataString = @"Hello";
+    }
+}
 
 @end

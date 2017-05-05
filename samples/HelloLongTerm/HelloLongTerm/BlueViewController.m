@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.blueLabel.text = self.dataString;
 }
 - (IBAction)showSecond:(id)sender {
     UIStoryboard * secondStory = [UIStoryboard storyboardWithName:@"SecondStoryboard" bundle:nil];

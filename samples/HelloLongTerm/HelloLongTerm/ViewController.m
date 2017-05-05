@@ -72,4 +72,8 @@
     
 }
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    NSLog(@"prepare segure in View Controller");
+}
+
 @end
