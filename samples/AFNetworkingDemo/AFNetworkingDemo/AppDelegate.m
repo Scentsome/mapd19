@@ -16,7 +16,15 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+        NSURL * url = [NSURL URLWithString:[self.results valueForKey:@"artworkUrl30"][indexPath.row]];
+        NSData * imageData = [NSData dataWithContentsOfURL:url];
+        UIImage * image = [UIImage imageWithData:imageData];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            UITableViewCell * cell = [self.tableView cellForRowAtIndexPath:indexPath];
+            cell.imageView.image = image;
+        });
+    });
     return YES;
 }
 
