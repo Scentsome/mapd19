@@ -9,7 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @interface Car : NSObject
-@property int price;
+//@property int price;
 //-(int) price;
 //-(void) setPrice:(int) aPrice;
+-(void) printPrice;
 @end

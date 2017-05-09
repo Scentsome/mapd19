@@ -9,17 +9,24 @@
 #import "Car.h"
 
 @implementation Car
-//{
-//    int _price;
-//}
--(void) setPrice:(int) aPrice{
-//    _price = aPrice;
+{
+    int price;
+    int _price;
 }
-//-(int) price{
-//    return _price;
+////{
+////    int _price;
+////}
+-(void) setPrice:(int) aPrice{
+    NSLog(@"Hello set price");
+}
+////-(int) price{
+////    return _price;
+////}
+//
+//-(void) printPrice {
+//    NSLog(@"price right now %d", _price);
 //}
-
--(void) printPrice {
-    NSLog(@"price right now %d", _price);
+-(void) printPrice{
+    NSLog(@"price is %d", price);
 }
 @end

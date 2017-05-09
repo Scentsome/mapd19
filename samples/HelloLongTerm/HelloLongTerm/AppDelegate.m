@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "Car.h"
 #import "Rectangle.h"
+#import "Engine.h"
 
 @interface AppDelegate ()
 
@@ -19,9 +20,44 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    Rectangle * rect = [[Rectangle alloc] init];
-    Rectangle * rect2 = rect;
+//    Rectangle * rect = [[Rectangle alloc] init];
+//    Rectangle * rect2 = rect;
+    Car * car = [Car new];
     
+    [car printPrice];
+    [car setValue:@500 forKey:@"price"];
+    NSNumber * value = [car valueForKey:@"price"];
+    
+    [car printPrice];
+    
+    Engine * en1 = [Engine new];
+    [en1 setValue:@100 forKey:@"price"];
+    Engine * en2 = [Engine new];
+    [en2 setValue:@200 forKey:@"price"];
+    Engine * en3 = [Engine new];
+    [en3 setValue:@600 forKey:@"price"];
+    NSArray * engines = [NSArray arrayWithObjects:en1,en2,en3, nil];
+    
+    NSNumber * avgValue = [engines valueForKeyPath:@"@avg.price"];
+    NSLog(@"%@",avgValue);
+    
+    
+    NSPredicate * less300 = [NSPredicate predicateWithFormat:@" price < 300"];
+    less300 = [NSPredicate predicateWithBlock:^BOOL(Engine *  _Nullable evaluatedObject, NSDictionary<NSString *,id> * _Nullable bindings) {
+        NSNumber * price = [evaluatedObject valueForKey:@"price"];
+        if(price.integerValue < 300) {
+            return  YES;
+        }
+        
+        return NO;
+    }];
+    
+    NSArray * result = [engines filteredArrayUsingPredicate:less300];
+    NSLog(@"%@",result);
+    
+    NSMutableArray * mArray = [NSMutableArray new];
+    
+//    [mArray filterUsingPredicate:<#(nonnull NSPredicate *)#>]
     return YES;
 }
 
