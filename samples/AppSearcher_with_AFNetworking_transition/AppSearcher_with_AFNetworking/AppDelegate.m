@@ -9,11 +9,20 @@
 #import "AppDelegate.h"
 
 @interface AppDelegate ()
+@property (nonatomic)  BOOL isLogined;
 
 @end
 
 @implementation AppDelegate
-
+-(BOOL) isLogined{
+    return _isLogined;
+}
+-(void) login{
+    self.isLogined = YES;
+}
+-(void) logout{
+    self.isLogined = NO;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.

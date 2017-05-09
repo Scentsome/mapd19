@@ -2,6 +2,7 @@
 #import "ViewController.h"
 #import "AFNetworking.h"
 #import "DetailViewController.h"
+#import "AppDelegate.h"
 
 @interface ViewController (){
 
@@ -17,7 +18,12 @@
     self.resultTable.dataSource = self;
     self.appNameTextField.delegate = self;
     self.countryTextField.delegate = self;
-
+    AppDelegate * appDelegate =  [UIApplication sharedApplication].delegate ;
+    
+    [appDelegate login];
+    NSLog(@"%d",[appDelegate isLogined]);
+    [appDelegate logout];
+    NSLog(@"%d",[appDelegate isLogined]);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -27,6 +33,7 @@
 
 - (IBAction)searchBTNPressed:(id)sender {
     
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     // 將textfield的內容轉換成UTF8的文字
     NSString * appNameFromField = self.appNameTextField.text;
 
@@ -55,6 +62,7 @@
         // 資料取得後，將tableView進行重新整理
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.resultTable reloadData];
+            [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
         });
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {

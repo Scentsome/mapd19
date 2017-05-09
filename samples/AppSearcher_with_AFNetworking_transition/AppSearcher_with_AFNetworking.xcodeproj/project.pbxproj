@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		04985A561AD0229B00E18B06 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04985A551AD0229B00E18B06 /* DetailViewController.m */; };
+		4C843DBA1EC1644800EF0F94 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C843DB91EC1644800EF0F94 /* LoginViewController.m */; };
 		DBC0F6F91A1EDEE400E35E3C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DBC0F6F81A1EDEE400E35E3C /* main.m */; };
 		DBC0F6FC1A1EDEE400E35E3C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DBC0F6FB1A1EDEE400E35E3C /* AppDelegate.m */; };
 		DBC0F6FF1A1EDEE400E35E3C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBC0F6FE1A1EDEE400E35E3C /* ViewController.m */; };
@@ -40,6 +41,8 @@
 /* Begin PBXFileReference section */
 		04985A541AD0229B00E18B06 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		04985A551AD0229B00E18B06 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		4C843DB81EC1644800EF0F94 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		4C843DB91EC1644800EF0F94 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		DBC0F6F31A1EDEE400E35E3C /* AppSearcher_with_AFNetworking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppSearcher_with_AFNetworking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBC0F6F71A1EDEE400E35E3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DBC0F6F81A1EDEE400E35E3C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -126,6 +129,8 @@
 				DBC0F6F61A1EDEE400E35E3C /* Supporting Files */,
 				04985A541AD0229B00E18B06 /* DetailViewController.h */,
 				04985A551AD0229B00E18B06 /* DetailViewController.m */,
+				4C843DB81EC1644800EF0F94 /* LoginViewController.h */,
+				4C843DB91EC1644800EF0F94 /* LoginViewController.m */,
 			);
 			path = AppSearcher_with_AFNetworking;
 			sourceTree = "<group>";
@@ -287,6 +292,7 @@
 				DBC0F6FF1A1EDEE400E35E3C /* ViewController.m in Sources */,
 				DBC0F7311A1EECD900E35E3C /* AFHTTPRequestOperationManager.m in Sources */,
 				DBC0F7331A1EECD900E35E3C /* AFNetworkReachabilityManager.m in Sources */,
+				4C843DBA1EC1644800EF0F94 /* LoginViewController.m in Sources */,
 				DBC0F7371A1EECD900E35E3C /* AFURLResponseSerialization.m in Sources */,
 				DBC0F7351A1EECD900E35E3C /* AFURLConnectionOperation.m in Sources */,
 				DBC0F7341A1EECD900E35E3C /* AFSecurityPolicy.m in Sources */,
