@@ -21,8 +21,27 @@
     [super viewDidLoad];
     [self.myButton addTarget:self action:@selector(hello:) forControlEvents:UIControlEventTouchUpInside];
     
+    NSURLComponents * components = [[NSURLComponents alloc ] init];
+    components.scheme = @"http";
+    components.host = @"itunes.apple.com";
+    components.path = @"/search";
+    components.query = @"term=周杰倫&country=tw";
+    NSString * encodedString = [components.query stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+    NSLog(@"%@", encodedString);
+    
+    
+    
+    
+    NSURLComponents * myComs = [[NSURLComponents alloc ] initWithString:@"https://github.com/dekatotoro/SlideMenuControllerSwift"];
+    
+    NSLog(@"%@", myComs.path);
+    
+    
+    
+    
     
 }
+
 -(void) hello:(UIButton * ) sender  {
     sender.enabled = NO;
     NSLog(@"%@", sender);
