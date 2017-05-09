@@ -3,6 +3,7 @@
 #import "AFNetworking.h"
 #import "DetailViewController.h"
 #import "AppDelegate.h"
+#import "Car.h"
 
 @interface ViewController ()<UITabBarControllerDelegate>{
     
@@ -24,6 +25,47 @@
     
     self.navigationController.tabBarController.delegate = self ;
 //    self.navigationController.tabBarController.selectedIndex = 1;
+    NSString * filePath = [NSString stringWithFormat:@"%@/%@",[self docPath], @"myPlist.plist"];
+    
+    NSLog(@"%@",filePath);
+    
+    NSArray * data = @[@"Michael",[NSDate date], @800];
+    
+    [data writeToFile:filePath atomically:YES];
+    
+    NSDictionary * names = @{@"Michael":@23,@"James":@34,@"Allen":@56,@"Michael":@13,@"James":@14,@"Allen":@16};
+    
+    NSLog(@"%@", names);
+    
+    NSSet * set = [NSSet setWithObjects:@"Michael",@"James",@"Allen",@"James", nil];
+    
+    NSLog(@"%@",set);
+    
+    Car * car1 = [Car new];
+    car1.vendor = @"Honda";
+    car1.price = 1000;
+    Car * car2 = [Car new];
+    car2.vendor = @"Toyota";
+    Car * car3 = [Car new];
+    car3.vendor = @"Benz";
+    Car * car4 = [Car new];
+    car4.vendor = @"Honda";
+    Car * car5 = [Car new];
+    car5.vendor = @"Benz";
+    
+    NSSet * carSet = [NSSet setWithObjects:car1,car2,car3,car4,car5, nil];
+    
+    NSLog(@"cars %@", carSet );
+    
+    
+    
+//    [car1 is]
+}
+
+-(NSString * ) docPath {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    return documentsDirectory;
 }
 
 - (void)didReceiveMemoryWarning {

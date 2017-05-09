@@ -9,5 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface Car : NSObject
-
+@property int price;
+@property NSString * vendor;
 @end
