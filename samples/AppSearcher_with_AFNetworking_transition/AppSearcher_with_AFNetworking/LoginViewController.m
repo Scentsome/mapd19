@@ -34,7 +34,14 @@
     if (accountOK && passwdOK) {
         AppDelegate * appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate ;
         [appDelegate login];
-         [self dismissViewControllerAnimated:YES completion:nil];
+        NSLog(@"presenting %@", self.presentingViewController);
+        NSLog(@"presented %@", self.presentedViewController);
+        
+        UITabBarController * tabBarVC = (UITabBarController * )self.presentingViewController;
+         [self dismissViewControllerAnimated:YES completion:^{
+             tabBarVC.selectedIndex = 1;
+             ((UITabBarController * )self.presentingViewController).selectedIndex = 1;
+         }];
     }else{
         UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Wrong A or P" message:@"Please check your account or password" preferredStyle:UIAlertControllerStyleAlert];
         [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
@@ -59,5 +66,14 @@
     // Pass the selected object to the new view controller.
 }
 */
+- (IBAction)cancel:(id)sender {
+    
+    NSLog(@"presenting %@", self.presentingViewController);
+    NSLog(@"presented %@", self.presentedViewController);
+    [self dismissViewControllerAnimated:YES completion:^{
+        NSLog(@"presenting %@", self.presentingViewController);
+        NSLog(@"presented %@", self.presentedViewController);
+    }];
+}
 
 @end

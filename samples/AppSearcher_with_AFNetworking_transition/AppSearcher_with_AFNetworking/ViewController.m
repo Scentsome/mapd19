@@ -4,7 +4,9 @@
 #import "DetailViewController.h"
 #import "AppDelegate.h"
 
-@interface ViewController (){
+@interface ViewController ()<UITabBarControllerDelegate>{
+    
+    
 
 }
 
@@ -20,10 +22,8 @@
     self.countryTextField.delegate = self;
     AppDelegate * appDelegate =  [UIApplication sharedApplication].delegate ;
     
-    [appDelegate login];
-    NSLog(@"%d",[appDelegate isLogined]);
-    [appDelegate logout];
-    NSLog(@"%d",[appDelegate isLogined]);
+    self.navigationController.tabBarController.delegate = self ;
+//    self.navigationController.tabBarController.selectedIndex = 1;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -140,6 +140,26 @@
     DetailViewController * detailVC = segue.destinationViewController;
     detailVC.item = self.resultList[rowIndex];
     NSLog(@"%@", self.resultList[rowIndex] );
+    
+}
+
+-(BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController{
+    AppDelegate * appDelegate = (AppDelegate * )[UIApplication sharedApplication].delegate ;
+    if (viewController == self.navigationController){
+        return YES;
+    }
+    if ([appDelegate isLogined]) {
+        return YES;
+    }else {
+        UIViewController * loginVC =  [self.storyboard instantiateViewControllerWithIdentifier:@"LoginVC"];
+        [self presentViewController:loginVC animated:YES completion:nil];
+    }
+
+    return NO;
+}
+
+
+-(void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController{
     
 }
 
