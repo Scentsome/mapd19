@@ -34,8 +34,14 @@
     if (accountOK && passwdOK) {
         AppDelegate * appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate ;
         [appDelegate login];
+         [self dismissViewControllerAnimated:YES completion:nil];
+    }else{
+        UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Wrong A or P" message:@"Please check your account or password" preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
+        
+        [self presentViewController:alert animated:YES completion:nil];
     }
-    [self dismissViewControllerAnimated:YES completion:nil];
+   
 
 }
 

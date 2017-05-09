@@ -8,6 +8,7 @@
 
 #import "DetailViewController.h"
 #import <AVFoundation/AVFoundation.h>
+#import "AppDelegate.h"
 @interface DetailViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UIButton *previewBtn;
@@ -55,5 +56,16 @@
     // Pass the selected object to the new view controller.
 }
 */
+- (IBAction)addToFavorite:(id)sender {
+    AppDelegate * appDelegate = [UIApplication sharedApplication].delegate ;
+    
+    if ([appDelegate isLogined]) {
+        NSLog(@"add to record");
+    }else {
+        UIViewController * loginVC =  [self.storyboard instantiateViewControllerWithIdentifier:@"LoginVC"];
+        [self presentViewController:loginVC animated:YES completion:nil];
+    }
+
+}
 
 @end
