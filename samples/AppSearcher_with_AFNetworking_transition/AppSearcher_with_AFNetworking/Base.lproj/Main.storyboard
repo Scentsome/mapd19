@@ -188,10 +188,17 @@
                                 <rect key="frame" x="261" y="207" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="checkID:" destination="zcL-z6-ZrB" eventType="touchUpInside" id="R8M-LY-Se5"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="account" destination="SJI-G7-F0B" id="a0G-PQ-LRD"/>
+                        <outlet property="password" destination="5ma-ck-Xob" id="sag-tU-WLN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hs9-52-bcI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

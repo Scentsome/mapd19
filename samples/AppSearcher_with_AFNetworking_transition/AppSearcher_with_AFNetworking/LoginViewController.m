@@ -7,8 +7,10 @@
 //
 
 #import "LoginViewController.h"
-
+#import "AppDelegate.h"
 @interface LoginViewController ()
+@property (weak, nonatomic) IBOutlet UITextField *account;
+@property (weak, nonatomic) IBOutlet UITextField *password;
 
 @end
 
@@ -17,6 +19,24 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+}
+- (IBAction)checkID:(id)sender {
+    NSString * account = self.account.text;
+    NSString * passwd = self.password.text;
+    BOOL accountOK = NO;
+    BOOL passwdOK = NO;
+    if ([account isEqualToString:@"abc"]) {
+        accountOK = YES;
+    }
+    if ([passwd isEqualToString:@"123"]) {
+        passwdOK = YES;
+    }
+    if (accountOK && passwdOK) {
+        AppDelegate * appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate ;
+        [appDelegate login];
+    }
+    [self dismissViewControllerAnimated:YES completion:nil];
+
 }
 
 - (void)didReceiveMemoryWarning {
