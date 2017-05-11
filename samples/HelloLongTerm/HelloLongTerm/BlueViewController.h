@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol BlueViewControllerDelegate <NSObject>
+
+-(void) sendMessage:(NSString *) blueMessage;
+
+@end
 @interface BlueViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UILabel *blueLabel;
 @property NSString * dataString;
