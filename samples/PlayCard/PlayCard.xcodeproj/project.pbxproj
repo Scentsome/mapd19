@@ -14,6 +14,8 @@
 		4C8225031EC3F089007061FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C8225021EC3F089007061FE /* Assets.xcassets */; };
 		4C8225061EC3F089007061FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C8225041EC3F089007061FE /* LaunchScreen.storyboard */; };
 		4C8225111EC3F089007061FE /* PlayCardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C8225101EC3F089007061FE /* PlayCardTests.m */; };
+		4C82251D1EC3F108007061FE /* CardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C82251C1EC3F108007061FE /* CardView.m */; };
+		4C82251E1EC3F13C007061FE /* CardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C82251C1EC3F108007061FE /* CardView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,8 @@
 		4C82250C1EC3F089007061FE /* PlayCardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlayCardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C8225101EC3F089007061FE /* PlayCardTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlayCardTests.m; sourceTree = "<group>"; };
 		4C8225121EC3F089007061FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C82251B1EC3F108007061FE /* CardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardView.h; sourceTree = "<group>"; };
+		4C82251C1EC3F108007061FE /* CardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +94,8 @@
 				4C8225041EC3F089007061FE /* LaunchScreen.storyboard */,
 				4C8225071EC3F089007061FE /* Info.plist */,
 				4C8224F61EC3F089007061FE /* Supporting Files */,
+				4C82251B1EC3F108007061FE /* CardView.h */,
+				4C82251C1EC3F108007061FE /* CardView.m */,
 			);
 			path = PlayCard;
 			sourceTree = "<group>";
@@ -217,6 +223,7 @@
 			files = (
 				4C8224FE1EC3F089007061FE /* ViewController.m in Sources */,
 				4C8224FB1EC3F089007061FE /* AppDelegate.m in Sources */,
+				4C82251D1EC3F108007061FE /* CardView.m in Sources */,
 				4C8224F81EC3F089007061FE /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -225,6 +232,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C82251E1EC3F13C007061FE /* CardView.m in Sources */,
 				4C8225111EC3F089007061FE /* PlayCardTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
