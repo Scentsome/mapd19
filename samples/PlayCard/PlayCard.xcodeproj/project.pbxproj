@@ -16,6 +16,8 @@
 		4C8225111EC3F089007061FE /* PlayCardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C8225101EC3F089007061FE /* PlayCardTests.m */; };
 		4C82251D1EC3F108007061FE /* CardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C82251C1EC3F108007061FE /* CardView.m */; };
 		4C82251E1EC3F13C007061FE /* CardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C82251C1EC3F108007061FE /* CardView.m */; };
+		4C8225201EC3F568007061FE /* front0.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C82251F1EC3F568007061FE /* front0.png */; };
+		4C8225221EC3F668007061FE /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C8225211EC3F668007061FE /* back.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		4C8225121EC3F089007061FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C82251B1EC3F108007061FE /* CardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardView.h; sourceTree = "<group>"; };
 		4C82251C1EC3F108007061FE /* CardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardView.m; sourceTree = "<group>"; };
+		4C82251F1EC3F568007061FE /* front0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = front0.png; sourceTree = "<group>"; };
+		4C8225211EC3F668007061FE /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +89,8 @@
 		4C8224F51EC3F089007061FE /* PlayCard */ = {
 			isa = PBXGroup;
 			children = (
+				4C8225211EC3F668007061FE /* back.png */,
+				4C82251F1EC3F568007061FE /* front0.png */,
 				4C8224F91EC3F089007061FE /* AppDelegate.h */,
 				4C8224FA1EC3F089007061FE /* AppDelegate.m */,
 				4C8224FC1EC3F089007061FE /* ViewController.h */,
@@ -202,7 +208,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C8225061EC3F089007061FE /* LaunchScreen.storyboard in Resources */,
+				4C8225221EC3F668007061FE /* back.png in Resources */,
 				4C8225031EC3F089007061FE /* Assets.xcassets in Resources */,
+				4C8225201EC3F568007061FE /* front0.png in Resources */,
 				4C8225011EC3F089007061FE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,21 +7,40 @@
 //
 
 #import <XCTest/XCTest.h>
-
+#import "CardView.h"
 @interface PlayCardTests : XCTestCase
 
 @end
 
-@implementation PlayCardTests
+@implementation PlayCardTests{
+    CardView * cardView;
+}
 
 - (void)setUp {
     [super setUp];
+    cardView = [CardView new];
     // Put setup code here. This method is called before the invocation of each test method in the class.
 }
 
 - (void)tearDown {
+    cardView = nil;
     // Put teardown code here. This method is called after the invocation of each test method in the class.
     [super tearDown];
+}
+-(void) testShowFront{
+    cardView.frontImage = [UIImage imageNamed:@"front0"];
+    [cardView showFront];
+//    if( cardView.image != cardView.frontImage){
+//        NSLog(@"errror !!!!");
+//    }
+    
+    XCTAssertEqual(cardView.image, cardView.frontImage, @"front image should be self.image");
+}
+
+-(void) testShowBack{
+    cardView.backImage = [UIImage imageNamed:@"back"];
+    [cardView showBack];
+    XCTAssertEqual(cardView.image, cardView.backImage, @"back image should be self.image");
 }
 
 - (void)testExample {

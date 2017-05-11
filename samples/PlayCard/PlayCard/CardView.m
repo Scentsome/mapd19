@@ -13,7 +13,7 @@
     self.image = self.frontImage;
 }
 -(void) showBack{
-    
+    self.image = self.backImage;
 }
 -(void) lock{
     
