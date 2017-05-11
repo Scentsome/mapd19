@@ -15,4 +15,5 @@
 -(void) showBack;
 -(void) lock;
 -(void) unlock;
+-(void)changeImage;
 @end

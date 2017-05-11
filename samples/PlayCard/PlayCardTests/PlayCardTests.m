@@ -53,6 +53,14 @@
     XCTAssertEqual(cardView.image, cardView.backImage, @"back image should be self.image");
 }
 
+-(void)testShowBackWhenLocked{
+    [cardView showFront];
+    [cardView lock];
+    [cardView showBack];
+    
+    XCTAssertEqual(cardView.image, cardView.frontImage, @"back image should be self.image");
+}
+
 - (void)testExample {
     // This is an example of a functional test case.
     // Use XCTAssert and related functions to verify your tests produce the correct results.

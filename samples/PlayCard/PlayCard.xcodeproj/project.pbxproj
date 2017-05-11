@@ -18,6 +18,11 @@
 		4C82251E1EC3F13C007061FE /* CardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C82251C1EC3F108007061FE /* CardView.m */; };
 		4C8225201EC3F568007061FE /* front0.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C82251F1EC3F568007061FE /* front0.png */; };
 		4C8225221EC3F668007061FE /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C8225211EC3F668007061FE /* back.png */; };
+		4C8225281EC40445007061FE /* front1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C8225231EC40445007061FE /* front1.png */; };
+		4C8225291EC40445007061FE /* front2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C8225241EC40445007061FE /* front2.png */; };
+		4C82252A1EC40445007061FE /* front3.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C8225251EC40445007061FE /* front3.png */; };
+		4C82252B1EC40445007061FE /* front4.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C8225261EC40445007061FE /* front4.png */; };
+		4C82252C1EC40445007061FE /* front5.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C8225271EC40445007061FE /* front5.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +53,11 @@
 		4C82251C1EC3F108007061FE /* CardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardView.m; sourceTree = "<group>"; };
 		4C82251F1EC3F568007061FE /* front0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = front0.png; sourceTree = "<group>"; };
 		4C8225211EC3F668007061FE /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
+		4C8225231EC40445007061FE /* front1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = front1.png; sourceTree = "<group>"; };
+		4C8225241EC40445007061FE /* front2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = front2.png; sourceTree = "<group>"; };
+		4C8225251EC40445007061FE /* front3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = front3.png; sourceTree = "<group>"; };
+		4C8225261EC40445007061FE /* front4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = front4.png; sourceTree = "<group>"; };
+		4C8225271EC40445007061FE /* front5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = front5.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +99,11 @@
 		4C8224F51EC3F089007061FE /* PlayCard */ = {
 			isa = PBXGroup;
 			children = (
+				4C8225231EC40445007061FE /* front1.png */,
+				4C8225241EC40445007061FE /* front2.png */,
+				4C8225251EC40445007061FE /* front3.png */,
+				4C8225261EC40445007061FE /* front4.png */,
+				4C8225271EC40445007061FE /* front5.png */,
 				4C8225211EC3F668007061FE /* back.png */,
 				4C82251F1EC3F568007061FE /* front0.png */,
 				4C8224F91EC3F089007061FE /* AppDelegate.h */,
@@ -208,10 +223,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C8225061EC3F089007061FE /* LaunchScreen.storyboard in Resources */,
+				4C82252A1EC40445007061FE /* front3.png in Resources */,
+				4C8225291EC40445007061FE /* front2.png in Resources */,
 				4C8225221EC3F668007061FE /* back.png in Resources */,
 				4C8225031EC3F089007061FE /* Assets.xcassets in Resources */,
+				4C82252B1EC40445007061FE /* front4.png in Resources */,
 				4C8225201EC3F568007061FE /* front0.png in Resources */,
 				4C8225011EC3F089007061FE /* Main.storyboard in Resources */,
+				4C8225281EC40445007061FE /* front1.png in Resources */,
+				4C82252C1EC40445007061FE /* front5.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
