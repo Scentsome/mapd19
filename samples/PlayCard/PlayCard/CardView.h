@@ -14,4 +14,5 @@
 -(void) showFront;
 -(void) showBack;
 -(void) lock;
+-(void) unlock;
 @end

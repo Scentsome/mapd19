@@ -19,6 +19,8 @@
 - (void)setUp {
     [super setUp];
     cardView = [CardView new];
+    cardView.frontImage = [UIImage imageNamed:@"front0"];
+    cardView.backImage = [UIImage imageNamed:@"back"];
     // Put setup code here. This method is called before the invocation of each test method in the class.
 }
 
@@ -28,18 +30,26 @@
     [super tearDown];
 }
 -(void) testShowFront{
-    cardView.frontImage = [UIImage imageNamed:@"front0"];
+    
     [cardView showFront];
 //    if( cardView.image != cardView.frontImage){
 //        NSLog(@"errror !!!!");
 //    }
     
     XCTAssertEqual(cardView.image, cardView.frontImage, @"front image should be self.image");
+//    XCTAssertEqualObjects(<#expression1#>, <#expression2, ...#>)
 }
 
 -(void) testShowBack{
-    cardView.backImage = [UIImage imageNamed:@"back"];
+    
     [cardView showBack];
+    XCTAssertEqual(cardView.image, cardView.backImage, @"back image should be self.image");
+}
+-(void) testShowFrontWhenLocked {
+    [cardView showBack];
+    [cardView lock];
+    [cardView showFront];
+    
     XCTAssertEqual(cardView.image, cardView.backImage, @"back image should be self.image");
 }
 
