@@ -10,7 +10,7 @@
 #import "ModelController.h"
 #import "DataViewController.h"
 
-@interface RootViewController ()
+@interface RootViewController ()<UIPageViewControllerDataSource>
 
 @property (readonly, strong, nonatomic) ModelController *modelController;
 @end
@@ -30,7 +30,7 @@
     NSArray *viewControllers = @[startingViewController];
     [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
 
-    self.pageViewController.dataSource = self.modelController;
+    self.pageViewController.dataSource = self;
 
     [self addChildViewController:self.pageViewController];
     [self.view addSubview:self.pageViewController.view];
@@ -64,34 +64,59 @@
 
 #pragma mark - UIPageViewController delegate methods
 
-- (UIPageViewControllerSpineLocation)pageViewController:(UIPageViewController *)pageViewController spineLocationForInterfaceOrientation:(UIInterfaceOrientation)orientation {
-    if (UIInterfaceOrientationIsPortrait(orientation) || ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)) {
-        // In portrait orientation or on iPhone: Set the spine position to "min" and the page view controller's view controllers array to contain just one view controller. Setting the spine position to 'UIPageViewControllerSpineLocationMid' in landscape orientation sets the doubleSided property to YES, so set it to NO here.
+//- (UIPageViewControllerSpineLocation)pageViewController:(UIPageViewController *)pageViewController spineLocationForInterfaceOrientation:(UIInterfaceOrientation)orientation {
+//    if (UIInterfaceOrientationIsPortrait(orientation) || ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)) {
+//        // In portrait orientation or on iPhone: Set the spine position to "min" and the page view controller's view controllers array to contain just one view controller. Setting the spine position to 'UIPageViewControllerSpineLocationMid' in landscape orientation sets the doubleSided property to YES, so set it to NO here.
+//        
+//        UIViewController *currentViewController = self.pageViewController.viewControllers[0];
+//        NSArray *viewControllers = @[currentViewController];
+//        [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
+//        
+//        self.pageViewController.doubleSided = NO;
+//        return UIPageViewControllerSpineLocationMin;
+//    }
+//
+//    // In landscape orientation: Set set the spine location to "mid" and the page view controller's view controllers array to contain two view controllers. If the current page is even, set it to contain the current and next view controllers; if it is odd, set the array to contain the previous and current view controllers.
+//    DataViewController *currentViewController = self.pageViewController.viewControllers[0];
+//    NSArray *viewControllers = nil;
+//
+//    NSUInteger indexOfCurrentViewController = [self.modelController indexOfViewController:currentViewController];
+//    if (indexOfCurrentViewController == 0 || indexOfCurrentViewController % 2 == 0) {
+//        UIViewController *nextViewController = [self.modelController pageViewController:self.pageViewController viewControllerAfterViewController:currentViewController];
+//        viewControllers = @[currentViewController, nextViewController];
+//    } else {
+//        UIViewController *previousViewController = [self.modelController pageViewController:self.pageViewController viewControllerBeforeViewController:currentViewController];
+//        viewControllers = @[previousViewController, currentViewController];
+//    }
+//    [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
+//
+//
+//    return UIPageViewControllerSpineLocationMid;
+//}
+
+
+-(UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController{
+    return [self.storyboard instantiateViewControllerWithIdentifier:@"DataViewController"];
+}
+
+-(UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController{
+    return [self.storyboard instantiateViewControllerWithIdentifier:@"DataViewController"];
+}
+
+-(UIPageViewControllerSpineLocation) pageViewController:(UIPageViewController *)pageViewController spineLocationForInterfaceOrientation:(UIInterfaceOrientation)orientation{
+    if (UIInterfaceOrientationIsLandscape(orientation)){
         
-        UIViewController *currentViewController = self.pageViewController.viewControllers[0];
-        NSArray *viewControllers = @[currentViewController];
+        UIViewController * previousViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"DataViewController"];
+        UIViewController * currentViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"DataViewController"];
+        NSArray *viewControllers = @[previousViewController, currentViewController];
         [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
+        return UIPageViewControllerSpineLocationMid;
         
-        self.pageViewController.doubleSided = NO;
-        return UIPageViewControllerSpineLocationMin;
     }
-
-    // In landscape orientation: Set set the spine location to "mid" and the page view controller's view controllers array to contain two view controllers. If the current page is even, set it to contain the current and next view controllers; if it is odd, set the array to contain the previous and current view controllers.
-    DataViewController *currentViewController = self.pageViewController.viewControllers[0];
-    NSArray *viewControllers = nil;
-
-    NSUInteger indexOfCurrentViewController = [self.modelController indexOfViewController:currentViewController];
-    if (indexOfCurrentViewController == 0 || indexOfCurrentViewController % 2 == 0) {
-        UIViewController *nextViewController = [self.modelController pageViewController:self.pageViewController viewControllerAfterViewController:currentViewController];
-        viewControllers = @[currentViewController, nextViewController];
-    } else {
-        UIViewController *previousViewController = [self.modelController pageViewController:self.pageViewController viewControllerBeforeViewController:currentViewController];
-        viewControllers = @[previousViewController, currentViewController];
-    }
+    UIViewController * currentViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"DataViewController"];
+    NSArray *viewControllers = @[currentViewController];
     [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
-
-
-    return UIPageViewControllerSpineLocationMid;
+    return UIPageViewControllerSpineLocationMin;
 }
 
 
