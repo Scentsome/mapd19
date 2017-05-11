@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()
+@interface ViewController ()<UIPopoverPresentationControllerDelegate>
 @property (strong, nonatomic) IBOutletCollection(UILabel) NSArray *labels;
 @property (weak, nonatomic) IBOutlet UITextField *input2;
 @property (weak, nonatomic) IBOutlet UITextField *input1;
@@ -16,6 +16,29 @@
 @end
 
 @implementation ViewController
+- (IBAction)presentPop:(UIButton *)sender {
+    UIViewController * vc = [self.storyboard instantiateViewControllerWithIdentifier:@"GrayVC"];
+    
+    vc.modalPresentationStyle = UIModalPresentationPopover;
+    vc.preferredContentSize = CGSizeMake(50, 50);
+
+    UIPopoverPresentationController * popPC = vc.popoverPresentationController;
+    
+    popPC.sourceRect = sender.frame;
+    popPC.sourceView = self.view;
+    popPC.permittedArrowDirections = UIPopoverArrowDirectionUp;
+    
+    
+    popPC.delegate = self;
+    
+    [self presentViewController:vc animated:YES completion:nil];
+
+}
+
+
+-(UIModalPresentationStyle)adaptivePresentationStyleForPresentationController:(UIPresentationController *)controller{
+    return  UIModalPresentationNone;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -37,7 +60,15 @@
     NSLog(@"%@", myComs.path);
     
     
+    NSNotificationCenter * defaultCenter = [NSNotificationCenter defaultCenter];
     
+    [defaultCenter addObserverForName:UIApplicationDidEnterBackgroundNotification object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
+        NSLog(@"did enter background in view controller");
+    }];
+    
+    [defaultCenter addObserverForName:UIKeyboardDidShowNotification object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
+        NSLog(@"%@",note.userInfo);
+    }];
     
     
 }
