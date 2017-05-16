@@ -13,6 +13,7 @@
 		4C6A01AF1ECA935A00C39417 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C6A01AD1ECA935A00C39417 /* Main.storyboard */; };
 		4C6A01B11ECA935A00C39417 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C6A01B01ECA935A00C39417 /* Assets.xcassets */; };
 		4C6A01B41ECA935A00C39417 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C6A01B21ECA935A00C39417 /* LaunchScreen.storyboard */; };
+		4C6A01BD1ECA9AB100C39417 /* PeersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6A01BC1ECA9AB100C39417 /* PeersViewController.m */; };
 		70157FC64BC1F15988C06194 /* libPods-HostPeerInClass.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 62D6A5F22EF5F9EC3FDA4657 /* libPods-HostPeerInClass.a */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +29,8 @@
 		4C6A01B01ECA935A00C39417 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4C6A01B31ECA935A00C39417 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4C6A01B51ECA935A00C39417 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C6A01BB1ECA9AB100C39417 /* PeersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeersViewController.h; sourceTree = "<group>"; };
+		4C6A01BC1ECA9AB100C39417 /* PeersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeersViewController.m; sourceTree = "<group>"; };
 		608AFBFEECAB36F00931D3C3 /* Pods-HostPeerInClass.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HostPeerInClass.release.xcconfig"; path = "Pods/Target Support Files/Pods-HostPeerInClass/Pods-HostPeerInClass.release.xcconfig"; sourceTree = "<group>"; };
 		62D6A5F22EF5F9EC3FDA4657 /* libPods-HostPeerInClass.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HostPeerInClass.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -82,6 +85,8 @@
 				4C6A01B21ECA935A00C39417 /* LaunchScreen.storyboard */,
 				4C6A01B51ECA935A00C39417 /* Info.plist */,
 				4C6A01A41ECA935A00C39417 /* Supporting Files */,
+				4C6A01BB1ECA9AB100C39417 /* PeersViewController.h */,
+				4C6A01BC1ECA9AB100C39417 /* PeersViewController.m */,
 			);
 			path = HostPeerInClass;
 			sourceTree = "<group>";
@@ -228,6 +233,7 @@
 			files = (
 				4C6A01AC1ECA935A00C39417 /* ViewController.m in Sources */,
 				4C6A01A91ECA935A00C39417 /* AppDelegate.m in Sources */,
+				4C6A01BD1ECA9AB100C39417 /* PeersViewController.m in Sources */,
 				4C6A01A61ECA935A00C39417 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -351,6 +357,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = T59TDK9D3N;
 				INFOPLIST_FILE = HostPeerInClass/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zencher.demo..HostPeerInClass;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -364,6 +371,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = T59TDK9D3N;
 				INFOPLIST_FILE = HostPeerInClass/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zencher.demo..HostPeerInClass;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -389,6 +397,7 @@
 				4C6A01BA1ECA935A00C39417 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

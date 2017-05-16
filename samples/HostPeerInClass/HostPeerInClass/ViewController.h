@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import <SkyWay/SKWVideo.h>
 @interface ViewController : UIViewController
+- (IBAction)showPeers:(id)sender;
+@property (weak, nonatomic) IBOutlet SKWVideo *remoteVideoView;
 
 
 @end
