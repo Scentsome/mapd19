@@ -9,5 +9,6 @@
 #import <SpriteKit/SpriteKit.h>
 
 @interface GameOverScene : SKScene
+-(id) initWithSize:(CGSize)size win:(BOOL) winORlose;
 
 @end

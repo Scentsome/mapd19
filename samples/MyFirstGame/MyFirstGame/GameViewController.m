@@ -15,7 +15,7 @@
     [super viewDidLoad];
 
     // Load the SKScene from 'GameScene.sks'
-    GameScene *scene = (GameScene *)[SKScene nodeWithFileNamed:@"GameScene"];
+    GameScene *scene = [GameScene sceneWithSize:self.view.bounds.size];
     
     // Set the scale mode to scale to fit the window
     scene.scaleMode = SKSceneScaleModeAspectFill;
