@@ -83,7 +83,7 @@ typedef NS_ENUM(NSUInteger, AlertType)
     // SKWPeer has many options. Please check the document. >> http://nttcom.github.io/skyway/docs/
     
     
-    _peer	= [[SKWPeer alloc] initWithId:nil options:option];
+    _peer	= [[SKWPeer alloc] initWithId:@"1234" options:option];
     [self setCallbacks:_peer];
     
     //////////////////////////////////////////////////////////////////////
