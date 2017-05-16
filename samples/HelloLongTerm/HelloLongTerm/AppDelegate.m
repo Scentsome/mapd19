@@ -20,6 +20,18 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    NSDateFormatter * dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.dateFormat = @"YYYY-MM-dd";
+    
+    NSDate * date8_1 = [NSDate dateWithTimeIntervalSince1970:1470036678];
+    
+    NSLog(@"%@",[dateFormatter stringFromDate:date8_1]);
+    
+    
+    NSDate * date7_1 = [NSDate dateWithTimeIntervalSince1970:1467358278];
+    
+    NSLog(@"%@",[dateFormatter stringFromDate:date7_1]);
+    
 //    Rectangle * rect = [[Rectangle alloc] init];
 //    Rectangle * rect2 = rect;
     Car * car = [Car new];
